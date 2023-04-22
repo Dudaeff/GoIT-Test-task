@@ -5,9 +5,14 @@ import { UsersListStyled } from './UsersList.styled';
 import { LoadMoreButton } from 'components/LoadMoreButton/LoadMorebutton';
 
 export const UsersList = () => {
-  const [users, setUsers] = useState([]);
-  const [visible, setVisible] = useState(3);
+  const [visibleCardsQty, setVisibleCardsQty] = useState(3);
   const [isLoading, setIsLoading] = useState(false);
+  const [users, setUsers] = useState([]);
+  // const [onlyFollowUsers, setOnlyFollowUsers] = useState([]);
+  const [onlyFollowingUsers, setOnlyFollowingUsers] = useState([]);
+  const [isFollowing, setIsFollowing] = useState(false);
+
+  console.log(onlyFollowingUsers);
 
   useEffect(() => {
     setIsLoading(true);
@@ -19,19 +24,31 @@ export const UsersList = () => {
   }, [users.length]);
 
   const handleLoadMoreBtn = () => {
-    setVisible(prevValue => prevValue + 3);
+    setVisibleCardsQty(prevValue => prevValue + 3);
+  };
+
+  const onFollowBtnClick = id => {
+    const followed = users.find(user => user.id === id);
+    setOnlyFollowingUsers(prevUsers => [
+      ...prevUsers,
+      { ...followed, following: true },
+    ]);
   };
 
   return (
     <>
       <UsersListStyled>
-        {users?.slice(0, visible).map(user => (
+        {users?.slice(0, visibleCardsQty).map(user => (
           <li key={user.id}>
-            <UserCard user={user} />
+            <UserCard
+              user={user}
+              onFollowClick={onFollowBtnClick}
+              following={onlyFollowingUsers}
+            />
           </li>
         ))}
       </UsersListStyled>
-      {isLoading && users.length !== visible && (
+      {isLoading && users.length !== visibleCardsQty && (
         <LoadMoreButton onClick={handleLoadMoreBtn} />
       )}
     </>

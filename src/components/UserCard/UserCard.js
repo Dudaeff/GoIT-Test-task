@@ -11,27 +11,10 @@ import {
 } from './UserCard.styled';
 import GoITLogo from 'images/logo.png';
 import ProfileBackgroundImage from 'images/profile-background.png';
-import { setFollowUser, setUnFollowUser } from 'services/usersAPI';
-// import { fetchUsers } from 'services/usersAPI';
 // import { useEffect, useState } from 'react';
 
-export const UserCard = ({ user }) => {
-  // const [users, setUsers] = useState([]);
-
-  // useEffect(() => {
-  //   if (users.length === 0)
-  //     fetchUsers()
-  //       .then(users => setUsers(users))
-  //       .catch(error => console.error(error.message));
-  // }, [users.length]);
-
-  const { followers: followersQty, tweets, avatar, id } = user;
-
-  const onFollowButtonClick = id => {
-    setFollowUser(id, { followers: followersQty + 1 });
-    setUnFollowUser(id, { followers: followersQty - 1 });
-    // console.log(id);
-  };
+export const UserCard = ({ user, onFollowClick, following }) => {
+  const { followers, tweets, avatar, id } = user;
 
   return (
     <Card>
@@ -53,10 +36,11 @@ export const UserCard = ({ user }) => {
             <ProfileInfoText>{tweets} tweets</ProfileInfoText>
           </li>
           <li>
-            <ProfileInfoText>{followersQty} followers</ProfileInfoText>
+            <ProfileInfoText>{followers} followers</ProfileInfoText>
           </li>
         </ProfileInfoList>
-        <ProfileButton type="button" onClick={() => onFollowButtonClick(id)}>
+        <ProfileButton type="button" onClick={() => onFollowClick(id)}>
+          {/* {isFollowed ? 'Following' : 'Follow'} */}
           Follow
         </ProfileButton>
       </Profile>
