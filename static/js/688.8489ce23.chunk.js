@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktweet_zone=self.webpackChunktweet_zone||[]).push([[688],{688:function(e,n,t){t.r(n),t.d(n,{default:function(){return a}});var o,r,c=t(168),i=t(444),u=t(839),s=i.ZP.section(o||(o=(0,c.Z)(["\n  padding: 100px 0;\n"]))),f=i.ZP.h1(r||(r=(0,c.Z)(["\n  font-size: 30px;\n  font-weight: 900;\n  text-align: center;\n  color: ",";\n"])),u.O.userImageBgrnd),l=t(184),a=function(){return(0,l.jsx)(s,{children:(0,l.jsx)(f,{children:"Welcome to TweetZone!"})})}}}]);
+//# sourceMappingURL=688.8489ce23.chunk.js.map
