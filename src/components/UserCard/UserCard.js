@@ -1,3 +1,6 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { followUser, unfollowUser } from 'redux/users/operations';
+import { selectFollowing } from 'redux/users/selectors';
 import {
   Card,
   CardLogoWrapper,
@@ -11,10 +14,24 @@ import {
 } from './UserCard.styled';
 import GoITLogo from 'images/logo.png';
 import ProfileBackgroundImage from 'images/profile-background.png';
-// import { useEffect, useState } from 'react';
 
-export const UserCard = ({ user, onFollowClick, following }) => {
+export const UserCard = ({ user }) => {
+  const dispatch = useDispatch();
+  const following = useSelector(selectFollowing);
   const { followers, tweets, avatar, id } = user;
+  const isFollowing = following.find(user => user.id === id);
+
+  const onFollowBtnClick = userId => {
+    if (!isFollowing) {
+      dispatch(followUser(userId));
+    } else {
+      dispatch(unfollowUser(id));
+    }
+  };
+
+  const visibleFollowers = isFollowing
+    ? isFollowing?.followers.toLocaleString('en-US')
+    : followers.toLocaleString('en-US');
 
   return (
     <Card>
@@ -36,12 +53,15 @@ export const UserCard = ({ user, onFollowClick, following }) => {
             <ProfileInfoText>{tweets} tweets</ProfileInfoText>
           </li>
           <li>
-            <ProfileInfoText>{followers} followers</ProfileInfoText>
+            <ProfileInfoText>{visibleFollowers} followers</ProfileInfoText>
           </li>
         </ProfileInfoList>
-        <ProfileButton type="button" onClick={() => onFollowClick(id)}>
-          {/* {isFollowed ? 'Following' : 'Follow'} */}
-          Follow
+        <ProfileButton
+          type="button"
+          className={isFollowing && 'active'}
+          onClick={() => onFollowBtnClick(id)}
+        >
+          {isFollowing ? 'Following' : 'Follow'}
         </ProfileButton>
       </Profile>
     </Card>

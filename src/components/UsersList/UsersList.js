@@ -1,38 +1,23 @@
 import { useEffect, useState } from 'react';
-import { fetchUsers } from 'services/usersAPI';
-import { UserCard } from 'components/UserCard/UserCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from 'redux/users/operations';
+import { selectUsers, selectUsersIsLoading } from 'redux/users/selectors';
 import { UsersListStyled } from './UsersList.styled';
+import { UserCard } from 'components/UserCard/UserCard';
 import { LoadMoreButton } from 'components/LoadMoreButton/LoadMorebutton';
 
 export const UsersList = () => {
   const [visibleCardsQty, setVisibleCardsQty] = useState(3);
-  const [isLoading, setIsLoading] = useState(false);
-  const [users, setUsers] = useState([]);
-  // const [onlyFollowUsers, setOnlyFollowUsers] = useState([]);
-  const [onlyFollowingUsers, setOnlyFollowingUsers] = useState([]);
-  const [isFollowing, setIsFollowing] = useState(false);
-
-  console.log(onlyFollowingUsers);
+  const dispatch = useDispatch();
+  const users = useSelector(selectUsers);
+  const isLoading = useSelector(selectUsersIsLoading);
 
   useEffect(() => {
-    setIsLoading(true);
-    if (users.length === 0)
-      fetchUsers()
-        .then(users => setUsers(users))
-        .catch(error => console.error(error.message))
-        .finally(setIsLoading(false));
-  }, [users.length]);
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   const handleLoadMoreBtn = () => {
     setVisibleCardsQty(prevValue => prevValue + 3);
-  };
-
-  const onFollowBtnClick = id => {
-    const followed = users.find(user => user.id === id);
-    setOnlyFollowingUsers(prevUsers => [
-      ...prevUsers,
-      { ...followed, following: true },
-    ]);
   };
 
   return (
@@ -40,15 +25,11 @@ export const UsersList = () => {
       <UsersListStyled>
         {users?.slice(0, visibleCardsQty).map(user => (
           <li key={user.id}>
-            <UserCard
-              user={user}
-              onFollowClick={onFollowBtnClick}
-              following={onlyFollowingUsers}
-            />
+            <UserCard user={user} />
           </li>
         ))}
       </UsersListStyled>
-      {isLoading && users.length !== visibleCardsQty && (
+      {!isLoading && users?.length !== visibleCardsQty && (
         <LoadMoreButton onClick={handleLoadMoreBtn} />
       )}
     </>
