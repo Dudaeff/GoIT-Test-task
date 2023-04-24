@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/TweetZone/static/css/main.66f9afd2.css",
-    "main.js": "/TweetZone/static/js/main.5e0a47e6.js",
+    "main.js": "/TweetZone/static/js/main.beda9a90.js",
     "static/js/688.a63211ad.chunk.js": "/TweetZone/static/js/688.a63211ad.chunk.js",
     "static/js/907.3a10bd33.chunk.js": "/TweetZone/static/js/907.3a10bd33.chunk.js",
     "static/media/profile-background.png": "/TweetZone/static/media/profile-background.b186e544641a66e17d83.png",
     "index.html": "/TweetZone/index.html",
     "main.66f9afd2.css.map": "/TweetZone/static/css/main.66f9afd2.css.map",
-    "main.5e0a47e6.js.map": "/TweetZone/static/js/main.5e0a47e6.js.map",
+    "main.beda9a90.js.map": "/TweetZone/static/js/main.beda9a90.js.map",
     "688.a63211ad.chunk.js.map": "/TweetZone/static/js/688.a63211ad.chunk.js.map",
     "907.3a10bd33.chunk.js.map": "/TweetZone/static/js/907.3a10bd33.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66f9afd2.css",
-    "static/js/main.5e0a47e6.js"
+    "static/js/main.beda9a90.js"
   ]
 }
