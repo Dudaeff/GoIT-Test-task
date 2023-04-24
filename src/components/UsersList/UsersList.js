@@ -43,9 +43,7 @@ export const UsersList = () => {
           </li>
         ))}
       </UsersListStyled>
-      {!isLoading && visibleUsers.length < 3 && (
-        <LoadMoreButton onClick={handleLoadMore} />
-      )}
+      {!isLoading && <LoadMoreButton onClick={handleLoadMore} />}
     </>
   );
 };
