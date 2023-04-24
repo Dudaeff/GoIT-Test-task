@@ -1,3 +1,3 @@
-const selectFilterValue = state => state.status;
+const selectFilterStatus = state => state.filter.status;
 
-export { selectFilterValue };
+export { selectFilterStatus };
