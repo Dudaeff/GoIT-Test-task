@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/TweetZone-GoIT-test-task/static/css/main.66f9afd2.css",
-    "main.js": "/TweetZone-GoIT-test-task/static/js/main.12733097.js",
+    "main.js": "/TweetZone-GoIT-test-task/static/js/main.a17fd08f.js",
     "static/js/688.a63211ad.chunk.js": "/TweetZone-GoIT-test-task/static/js/688.a63211ad.chunk.js",
     "static/js/907.3a10bd33.chunk.js": "/TweetZone-GoIT-test-task/static/js/907.3a10bd33.chunk.js",
     "static/media/profile-background.png": "/TweetZone-GoIT-test-task/static/media/profile-background.b186e544641a66e17d83.png",
     "index.html": "/TweetZone-GoIT-test-task/index.html",
     "main.66f9afd2.css.map": "/TweetZone-GoIT-test-task/static/css/main.66f9afd2.css.map",
-    "main.12733097.js.map": "/TweetZone-GoIT-test-task/static/js/main.12733097.js.map",
+    "main.a17fd08f.js.map": "/TweetZone-GoIT-test-task/static/js/main.a17fd08f.js.map",
     "688.a63211ad.chunk.js.map": "/TweetZone-GoIT-test-task/static/js/688.a63211ad.chunk.js.map",
     "907.3a10bd33.chunk.js.map": "/TweetZone-GoIT-test-task/static/js/907.3a10bd33.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66f9afd2.css",
-    "static/js/main.12733097.js"
+    "static/js/main.a17fd08f.js"
   ]
 }
