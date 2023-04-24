@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/TweetZone-GoIT-test-task">
+        <BrowserRouter basename="/TweetZone">
           <App />
         </BrowserRouter>
       </PersistGate>
