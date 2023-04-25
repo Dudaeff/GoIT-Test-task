@@ -38,6 +38,7 @@ const usersSlice = createSlice({
         state.isLoading = false;
 
         if (action.payload.length === 0) state.isLoading = true;
+
         state.items = [...state.items, ...action.payload];
       })
       .addCase(loadMoreUsers.rejected, handleRejected)
@@ -48,6 +49,7 @@ const usersSlice = createSlice({
         const index = state.items.findIndex(
           user => user.id === action.payload.id
         );
+
         state.items.splice(index, 1, {
           ...action.payload,
           isFollowing: true,
@@ -64,6 +66,7 @@ const usersSlice = createSlice({
         const index = state.items.findIndex(
           user => user.id === action.payload.id
         );
+
         state.items.splice(index, 1, {
           ...action.payload,
           isFollowing: false,

@@ -23,6 +23,9 @@ const LoadMoreStyled = styled.button`
   &:hover {
     background: ${colors.btnActive};
   }
+  &:focus {
+    background: ${colors.btnActive};
+  }
 `;
 
 export { LoadMoreStyled };

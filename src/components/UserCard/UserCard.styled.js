@@ -116,6 +116,9 @@ const ProfileButton = styled.button`
   &.active {
     background: ${colors.btnActive};
   }
+  &:focus {
+    outline-color: ${colors.btnActive};
+  }
 `;
 
 export {
