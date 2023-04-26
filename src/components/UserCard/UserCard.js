@@ -55,6 +55,7 @@ export const UserCard = ({ user }) => {
           type="button"
           className={isFollowing && 'active'}
           onClick={() => onFollowBtnClick(id)}
+          aria-label="follow unfollow user button"
         >
           {isFollowing ? 'Following' : 'Follow'}
         </ProfileButton>

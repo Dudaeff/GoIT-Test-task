@@ -23,16 +23,28 @@ export const AppBar = () => {
     <Bar>
       <HeaderWrapper>
         <TweetsLogo to={'/'} state={{ from: location }}>
-          <img src={TweetsLogoImage} alt="logo TweetZone" />
+          <img
+            src={TweetsLogoImage}
+            alt="logo TweetZone"
+            aria-label="page logo"
+          />
         </TweetsLogo>
         <nav>
           {location.pathname === '/' && (
-            <StyledLink to={'/tweets'} state={{ from: location }}>
+            <StyledLink
+              to={'/tweets'}
+              state={{ from: location }}
+              aria-label="link to tweets page"
+            >
               Tweets
             </StyledLink>
           )}
           {location.pathname === '/tweets' && (
-            <StyledLink to={'/'} state={{ from: location }}>
+            <StyledLink
+              to={'/'}
+              state={{ from: location }}
+              aria-label="link to home page"
+            >
               Back
             </StyledLink>
           )}
