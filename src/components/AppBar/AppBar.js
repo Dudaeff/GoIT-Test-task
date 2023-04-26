@@ -22,7 +22,11 @@ export const AppBar = () => {
   return (
     <Bar>
       <HeaderWrapper>
-        <TweetsLogo to={'/'} state={{ from: location }}>
+        <TweetsLogo
+          to={'/'}
+          state={{ from: location }}
+          aria-label="link to home page on logo click"
+        >
           <img
             src={TweetsLogoImage}
             alt="logo TweetZone"

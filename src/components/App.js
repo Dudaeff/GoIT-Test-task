@@ -13,7 +13,6 @@ function App() {
         <Route path="/tweets" element={<TweetsPage />} />
         <Route path="*" element={<Navigate to={'/'} />} />
       </Route>
-      <Route path="*" element={<Navigate to={'/'} />} />
     </Routes>
   );
 }
