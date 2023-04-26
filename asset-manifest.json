@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/TweetZone/static/css/main.66f9afd2.css",
-    "main.js": "/TweetZone/static/js/main.393c2943.js",
+    "main.js": "/TweetZone/static/js/main.f05f4a0c.js",
     "static/js/688.a63211ad.chunk.js": "/TweetZone/static/js/688.a63211ad.chunk.js",
-    "static/js/907.3df8419f.chunk.js": "/TweetZone/static/js/907.3df8419f.chunk.js",
+    "static/js/907.64ecc3a1.chunk.js": "/TweetZone/static/js/907.64ecc3a1.chunk.js",
     "static/media/profile-background.png": "/TweetZone/static/media/profile-background.b186e544641a66e17d83.png",
     "static/media/tweets-logo.png": "/TweetZone/static/media/tweets-logo.77946277938b5767447e.png",
     "index.html": "/TweetZone/index.html",
     "main.66f9afd2.css.map": "/TweetZone/static/css/main.66f9afd2.css.map",
-    "main.393c2943.js.map": "/TweetZone/static/js/main.393c2943.js.map",
+    "main.f05f4a0c.js.map": "/TweetZone/static/js/main.f05f4a0c.js.map",
     "688.a63211ad.chunk.js.map": "/TweetZone/static/js/688.a63211ad.chunk.js.map",
-    "907.3df8419f.chunk.js.map": "/TweetZone/static/js/907.3df8419f.chunk.js.map"
+    "907.64ecc3a1.chunk.js.map": "/TweetZone/static/js/907.64ecc3a1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66f9afd2.css",
-    "static/js/main.393c2943.js"
+    "static/js/main.f05f4a0c.js"
   ]
 }
