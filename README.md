@@ -1,3 +1,4 @@
-# TweetZone is a web application that allows you to find and follow new people.
+# TweetZone is a single-page application that allows you to view user profiles, follow them, and filter users by status using the select option.
 
-A simple project, created to approve main tech skills for Frontend Developer as React, JS, CSS.
+The application made with a state management library, and routing and asynchronous interaction with the backend.
+Created to approve main tech skills for Frontend Developer as React, JS, CSS.
